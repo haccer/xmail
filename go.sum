@@ -4,10 +4,12 @@ github.com/andybalholm/cascadia v1.3.1 h1:nhxRkql1kdYCc8Snf7D5/D3spOX+dBgjA6u8x0
 github.com/andybalholm/cascadia v1.3.1/go.mod h1:R4bJ1UQfqADjvDa4P6HZHLh/3OxWWEqc0Sk8XGwHqvA=
 github.com/domainr/whois v0.1.0 h1:36I1Hu+5pfvJzSXjnxN3lmIXeNNlZJmM5fkk9zlRF2o=
 github.com/domainr/whois v0.1.0/go.mod h1:/6Ej6qU9Xcl/8we/QKFWhJlvUlqmEDGXgHzOwbazVpo=
+github.com/domainr/whoistest v0.0.0-20180714175718-26cad4b7c941 h1:E7ehdIemEeScp8nVs0JXNXEbzb2IsHCk13ijvwKqRWI=
 github.com/domainr/whoistest v0.0.0-20180714175718-26cad4b7c941/go.mod h1:iuCHv1qZDoHJNQs56ZzzoKRSKttGgTr2yByGpSlKsII=
 github.com/haccer/available v0.0.0-20240130222223-85f2932ca401 h1:0R4KlOFOEkI73VM99mZmhkrsF6epOZxz2by6SFoZ5yo=
 github.com/haccer/available v0.0.0-20240130222223-85f2932ca401/go.mod h1:+m9HIUrlaBsqs8GQkBak4qP5F4JGft8ZPHAn6yKZ3FI=
 github.com/miekg/dns v1.1.46/go.mod h1:e3IlAVfNqAllflbibAZEWOXOQ+Ynzk/dDozDxY7XnME=
+github.com/nbio/st v0.0.0-20140626010706-e9e8d9816f32 h1:W6apQkHrMkS0Muv8G/TipAy/FJl/rCYT0+EuS8+Z0z4=
 github.com/nbio/st v0.0.0-20140626010706-e9e8d9816f32/go.mod h1:9wM+0iRr9ahx58uYLpLIr5fm8diHn0JbqRycJi6w0Ms=
 github.com/saintfish/chardet v0.0.0-20120816061221-3af4cd4741ca h1:NugYot0LIVPxTvN8n+Kvkn6TrbMyxQiuvKdEwFdR9vI=
 github.com/saintfish/chardet v0.0.0-20120816061221-3af4cd4741ca/go.mod h1:uugorj2VCxiV1x+LzaIdVa9b4S4qGAcH6cbhh4qVxOU=
