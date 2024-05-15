@@ -1,5 +1,5 @@
 # xmail
-Golang tool that detects which email addresses have domains which are able to be registered
+xmail is a Go tool that uses [haccer/available](https://github.com/haccer/available) to detect which email addresses have domains which are able to be registered.
 
 ## Install:
 
@@ -22,3 +22,6 @@ cat emails.txt | xmail
 ```
 
 ![xmail](https://raw.githubusercontent.com/haccer/xmail/main/image.png)
+
+## Todo
+- Better output (json, blank, etc.)
