@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"encoding/json"
 	"flag"
 	"fmt"
 	"os"
@@ -12,9 +13,15 @@ import (
 )
 
 var wordlistFile string
+var jsonOutput bool
 
 func init() {
 	flag.StringVar(&wordlistFile, "w", "", "Wordlist file")
+	flag.BoolVar(&jsonOutput, "json", false, "Output results in JSON format")
+}
+
+type Result struct {
+	Domain string `json:"domain"`
 }
 
 func main() {
@@ -27,12 +34,19 @@ func main() {
 	workerCount := 100
 	jobs := make(chan string, workerCount)
 
+	results := []Result{}
+
 	for w := 1; w <= workerCount; w++ {
 		go func() {
 			for domain := range jobs {
 				available := available.Domain(domain)
 				if available {
-					fmt.Println(domain)
+					if jsonOutput {
+						result := Result{Domain: domain}
+						results = append(results, result)
+					} else {
+						fmt.Println(domain)
+					}
 				}
 				wg.Done()
 			}
@@ -75,4 +89,9 @@ func main() {
 	close(jobs)
 
 	wg.Wait()
+
+	if jsonOutput && len(results) > 0 {
+		jsonData, _ := json.MarshalIndent(results, "", "  ")
+		fmt.Println(string(jsonData))
+	}
 }

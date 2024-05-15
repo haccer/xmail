@@ -21,8 +21,24 @@ go install
 cat emails.txt | xmail
 ```
 
+or
+
 ```
 xmail -w emails.txt
+```
+
+With JSON:
+
+```json
+% cat emails.txt| xmail --json
+[
+  {
+    "domain": "doalkdjfaklsjdfk.com"
+  },
+  {
+    "domain": "doesntexisthahshhsh.com"
+  }
+]
 ```
 
 ![xmail](https://raw.githubusercontent.com/haccer/xmail/main/image.png)
