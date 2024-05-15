@@ -1,4 +1,4 @@
-module xmail
+module github.com/haccer/xmail
 
 go 1.21.6
 
