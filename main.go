@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"flag"
 	"fmt"
 	"os"
 	"strings"
@@ -10,7 +11,15 @@ import (
 	"github.com/haccer/available"
 )
 
+var wordlistFile string
+
+func init() {
+	flag.StringVar(&wordlistFile, "w", "", "Wordlist file")
+}
+
 func main() {
+	flag.Parse()
+
 	scanner := bufio.NewScanner(os.Stdin)
 	uniqueDomains := make(map[string]bool)
 
@@ -23,19 +32,39 @@ func main() {
 			for domain := range jobs {
 				available := available.Domain(domain)
 				if available {
-					fmt.Printf("[+] Available Domain: %s\n", domain)
+					fmt.Println(domain)
 				}
 				wg.Done()
 			}
 		}()
 	}
 
-	for scanner.Scan() {
-		email := scanner.Text()
-		at := strings.LastIndex(email, "@")
-		if at >= 0 {
-			domain := email[at+1:]
-			uniqueDomains[domain] = true
+	if wordlistFile != "" {
+		file, err := os.Open(wordlistFile)
+		if err != nil {
+			fmt.Println("Error opening wordlist file:", err)
+			return
+		}
+		defer file.Close()
+
+		fileScanner := bufio.NewScanner(file)
+
+		for fileScanner.Scan() {
+			email := fileScanner.Text()
+			at := strings.LastIndex(email, "@")
+			if at >= 0 {
+				domain := email[at+1:]
+				uniqueDomains[domain] = true
+			}
+		}
+	} else {
+		for scanner.Scan() {
+			email := scanner.Text()
+			at := strings.LastIndex(email, "@")
+			if at >= 0 {
+				domain := email[at+1:]
+				uniqueDomains[domain] = true
+			}
 		}
 	}
 

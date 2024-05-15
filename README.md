@@ -21,7 +21,9 @@ go install
 cat emails.txt | xmail
 ```
 
+```
+xmail -w emails.txt
+```
+
 ![xmail](https://raw.githubusercontent.com/haccer/xmail/main/image.png)
 
-## Todo
-- Better output (json, blank, etc.)
