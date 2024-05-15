@@ -12,3 +12,5 @@ go install github.com/haccer/xmail@latest
 ```
 cat emails.txt | xmail
 ```
+
+![xmail](https://raw.githubusercontent.com/haccer/xmail/main/image.png)
