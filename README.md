@@ -29,7 +29,7 @@ xmail -w emails.txt
 
 With JSON:
 
-```json
+```
 % cat emails.txt| xmail --json
 [
   {
